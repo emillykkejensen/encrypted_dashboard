@@ -54,15 +54,15 @@ services:
 # Spin up a Shiny docker
   shiny:
       restart: always
-      image: emillykkejensen/mediaboard
-      container_name: mediaboard
+      image: emillykkejensen/cvrnet
+      container_name: cvrnet
       expose:
         - "3838"
       environment:
-        - VIRTUAL_HOST=devapp.medialytic.io # change line
+        - VIRTUAL_HOST=devapp.cvrnet.dk # change line
         - VIRTUAL_NETWORK=nginx-proxy # change line
         - VIRTUAL_PORT=80
-        - LETSENCRYPT_HOST=devapp.medialytic.io # change line
+        - LETSENCRYPT_HOST=devapp..cvrnet.dk # change line
         - LETSENCRYPT_EMAIL=info@medialytic.io # change line
       volumes:
         - ./logs:/var/log/shiny-server/
